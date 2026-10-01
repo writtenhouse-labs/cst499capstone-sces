@@ -1,0 +1,320 @@
+/* Custom navbar for more vegatable fun */
+.custom-navbar .nav-icon {
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    object-fit: contain;
+    margin-bottom: 4px;
+
+}
+
+/* Navbar color */
+.custom-navbar {
+    background-color: #157a369c;
+}
+
+.custom-navbar .container {
+  position: relative;
+}
+
+.navbar-greeting {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(20, 80, 40, 0.3);
+}
+
+@media (max-width: 767.98px) {
+  .custom-navbar .container {
+    flex-direction: column;
+  }
+
+  .navbar-greeting {
+    position: static;
+    align-self: flex-end;
+    order: -1;
+    margin: 0 0.5rem 0.2rem 0;
+    transform: none;
+    font-size: 0.9rem;
+  }
+}
+
+/* Center navigation links */
+.navbar-nav {
+    align-items: center;
+}
+
+/* Icon colors */
+.icon-link {
+    position: relative;
+    color: #157a369c;
+    text-align: center;
+    transition: 0.2s;
+}
+
+/* Configure navigation placements */
+.nav-icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1;
+  padding: 8px 10px;
+}
+
+/* Navigation links larger on hover */
+.nav-icon-link:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.nav-icon-link:hover img {
+  filter: brightness(1.3);
+}
+
+/* Hide text by default */
+.icon-label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+/* Show text on hover */
+.icon-link:hover .icon-label {
+    opacity: 1;
+    bottom: -30px;
+}
+
+/* Hover effect for icon */
+.icon-link:hover {
+    color: rgb(238, 93, 27);
+    transform: scale(1.2);
+}
+
+/* Page background */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Browse Courses */
+.browse-heading-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.search-panel {
+  border-top: 4px solid #157a36 !important;
+}
+
+.course-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.course-watermark {
+  position: absolute;
+  z-index: 0;
+  top: 10rem;
+  right: -2.25rem;
+  width: 12rem;
+  height: 12rem;
+  object-fit: contain;
+  opacity: 0.21;
+  pointer-events: none;
+  user-select: none;
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.75rem 1.5rem rgba(21, 122, 54, 0.14) !important;
+}
+
+.course-number {
+  color: #146c2e;
+  font-weight: 700;
+}
+
+.course-name {
+  color: #26382c;
+  font-weight: 600;
+}
+
+.program-badge {
+  color: #146c2e;
+  background-color: #e3f3e8;
+}
+
+.course-description {
+  display: -webkit-box;
+  min-height: 4.5rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.course-details {
+  font-size: 0.92rem;
+}
+
+/* My Courses */
+.enrolled-course-card {
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid #198754 !important;
+}
+
+.my-course-watermark {
+  position: absolute;
+  top: 0rem;
+  right: -1.5rem;
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+  opacity: 0.21;
+  pointer-events: none;
+}
+
+.calendar-shell {
+  border-top: 4px solid #157a36 !important;
+}
+
+.calendar-scroll {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.week-calendar {
+  display: grid;
+  position: relative;
+  min-width: 800px;
+  grid-template-columns: 64px repeat(5, minmax(135px, 1fr));
+  grid-template-rows: 42px repeat(21, 32px);
+  background: #fff;
+}
+
+.calendar-corner,
+.calendar-day-heading {
+  z-index: 2;
+  padding: 0.6rem 0.35rem;
+  color: #31523b;
+  background: #edf7f0;
+  border-bottom: 1px solid #cfe5d5;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.calendar-corner {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.calendar-day-heading {
+  grid-row: 1;
+  border-left: 1px solid #dfe9e2;
+}
+
+.calendar-time {
+  z-index: 2;
+  grid-column: 1;
+  transform: translateY(-0.55rem);
+  padding-right: 0.5rem;
+  color: #718078;
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+.calendar-grid-lines {
+  z-index: 0;
+  grid-column: 2 / 7;
+  grid-row: 2 / 23;
+  background-image:
+    linear-gradient(to right, #e3ebe5 1px, transparent 1px),
+    repeating-linear-gradient(to bottom, #e3ebe5 0, #e3ebe5 1px, transparent 1px, transparent 64px),
+    repeating-linear-gradient(to bottom, #f2f5f3 0, #f2f5f3 1px, transparent 1px, transparent 32px);
+  background-size: 20% 100%, 100% 64px, 100% 32px;
+}
+
+.calendar-event {
+  z-index: 1;
+  margin: 2px 4px;
+  padding: 0.35rem 0.45rem;
+  overflow: hidden;
+  color: #104d25;
+  background: rgba(174, 226, 187, 0.92);
+  border-left: 4px solid #198754;
+  border-radius: 0.35rem;
+  box-shadow: 0 1px 3px rgba(21, 122, 54, 0.14);
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.calendar-event strong,
+.calendar-event span {
+  display: block;
+}
+
+.calendar-event-waitlisted {
+  color: #664d03;
+  background: rgba(246, 223, 160, 0.92);
+  border-left-color: #d39e00;
+  outline: 1px dashed #b58100;
+}
+
+.calendar-event-status {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.calendar-legend {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.3rem;
+  border-radius: 0.2rem;
+  vertical-align: -0.05rem;
+}
+
+.calendar-legend.enrolled {
+  background: #aee2bb;
+  border-left: 3px solid #198754;
+}
+
+.calendar-legend.waitlisted {
+  background: #f6dfa0;
+  border: 1px dashed #b58100;
+}
+
+.btn-outline-onion {
+  --bs-btn-color: #212529;
+  --bs-btn-border-color: #9e2880;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #9e2880;
+  --bs-btn-hover-border-color: #9e2880;
+  --bs-btn-focus-shadow-rgb: 158, 40, 128;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #7f2067;
+  --bs-btn-active-border-color: #7f2067;
+  --bs-btn-disabled-color: #212529;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #9e2880;
+}
