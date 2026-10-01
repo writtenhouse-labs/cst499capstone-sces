@@ -89,53 +89,7 @@ The harness is split into three pieces:
 | `services/MockStudentInformationSystem.php` | Implements the contract and performs case-insensitive Student ID lookups. |
 | `mockSisStudents.php` | Contains fictional student records returned by the mock implementation. |
 
-During registration, SCES:
-
-1. Looks up the submitted Garden University Student ID.
-2. Confirms that the student exists and is active.
-3. Confirms that the submitted name, university email, and selected program match the SIS record.
-4. Copies the verified enrollment date and active status into the SCES student account.
-
-Before a student enrolls in a course or joins a waitlist, SCES checks the mock SIS again and blocks the request if the student is no longer active.
-
-### Mock SIS records
-
-These records are fictional and are safe to use when demonstrating the project. The student chooses an SCES password while registering; passwords are not stored in the mock SIS data.
-
-| Student ID | Student | University email | Program | Status |
-| --- | --- | --- | --- | --- |
-| `GU11111` | Valerie Veggie | `val.veggie@gusalad.edu` | Ranch Dressing Chef | Active |
-| `GU22222` | Caprese Tomato | `ctomato@gusalad.edu` | Herbology | Active |
-| `GU33333` | Flowery Blossoms | `snapdragon123@gusalad.edu` | Floral Design | Active |
-| `GU44444` | Mandy Merlot | `grapes.merlot@gusalad.edu` | Vines and Wines Vintner | Active |
-| `GU55555` | Sage Sprout | `sage.sprout@gusalad.edu` | Soil Science | Active |
-| `GU66666` | Ivy Dormant | `ivy.dormant@gusalad.edu` | Garden Planning | Inactive |
-
-`GU55555` is useful for demonstrating successful registration. `GU66666` demonstrates the inactive-student validation path. The `programId` values in `mockSisStudents.php` must correspond to records in the local `program` table.
-
-### Replacing the mock with a real SIS
-
-A production connector can implement `StudentInformationSystemInterface` and return the same student-record fields. `Register.php` and `BrowseCourses.php` can then instantiate the real connector instead of `MockStudentInformationSystem`, while the rest of the validation workflow remains unchanged.
-
-## Project layout
-
-```text
-cst499capstone-sces/
-├── assets/                         Vegetable and program artwork
-├── css/styles.css                  Application styling
-├── services/
-│   ├── MockStudentInformationSystem.php
-│   └── StudentInformationSystemInterface.php
-├── BrowseCourses.php               Search, enrollment, and waitlisting
-├── Database.php                    Local database connection helper
-├── Login.php                       Authentication
-├── MyCourses.php                   Schedule list and weekly calendar
-├── Profile.php                     Student profile
-├── Register.php                    SIS-verified account registration
-├── index.php                       Home page
-└── mockSisStudents.php             Fictional SIS records
-```
-
+<br><br>
 <div align="center">
   <p>
     <img src="assets/broccoli.png" alt="Broccoli" width="52">
