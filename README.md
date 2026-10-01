@@ -33,7 +33,7 @@ The application uses a garden-inspired interface, playful course catalog, and pr
 - Student registration validated through a mock Student Information System (SIS).
 - Session-based login, logout, personalized navigation, and student profile.
 - Course search by program, semester, and course ID.
-- Course cards showing meeting days, time, dates, capacity, and available seats.
+- Course cards showing class days, time, dates, capacity, and available seats.
 - Program-themed artwork displayed as course-card watermarks.
 - Enrollment with confirmation and schedule-conflict detection.
 - Automatic waitlisting when a course is full.
@@ -44,7 +44,7 @@ The application uses a garden-inspired interface, playful course catalog, and pr
 ## Technology
 
 - PHP with MySQLi
-- MySQL/MariaDB
+- MySQL
 - Apache through XAMPP
 - HTML, CSS, Bootstrap 5, and Bootstrap Icons
 
